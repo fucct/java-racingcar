@@ -9,12 +9,9 @@ public class RacingGame {
     }
 
     public int moveCars(Strategy randomGenerator) {
-        int maxPosition = 0;
         for (Car car : cars) {
-            if (car.move(randomGenerator)) {
-                maxPosition = car.getMaxPosition(maxPosition);
-            }
+            car.move(randomGenerator);
         }
-        return maxPosition;
+        return cars.getMaxPosition();
     }
 }

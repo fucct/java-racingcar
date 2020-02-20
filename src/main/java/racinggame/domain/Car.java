@@ -15,13 +15,11 @@ public class Car {
         this.position = position;
     }
 
-    public boolean move(Strategy strategy) {
+    public void move(Strategy strategy) {
         int random = strategy.generateRandom();
         if (random >= FORWARD_NUMBER) {
             position++;
-            return true;
         }
-        return false;
     }
 
     public boolean isSamePosition(int position) {
@@ -34,9 +32,5 @@ public class Car {
 
     public int getPosition() {
         return position;
-    }
-
-    public int getMaxPosition(int maxPosition) {
-        return Math.max(position, maxPosition);
     }
 }
